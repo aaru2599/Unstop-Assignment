@@ -35,7 +35,7 @@ const AssessmentOverview = ({ data }) => {
             <div className={`${thirdData?"border-end px-3":""}`}>
               <div className='d-flex  align-items-center'>
                 <div className='fs-5 fw-bold'>{data.totCount.secondSection.totNo}</div>
-                <CountDiv>{+data.totCount.secondSection.increaseBy}</CountDiv>
+                <CountDiv>+{data.totCount.secondSection.increaseBy}</CountDiv>
 
               </div>
               <TextDiv>{data.totCount.secondSection.text}</TextDiv>
@@ -44,7 +44,7 @@ const AssessmentOverview = ({ data }) => {
 
             {data?.totCount?.thirdSection?.totNo ? (
               <div>
-                <div className='d-flex gap-2 align-items-center'>
+                <div className='d-flex align-items-center'>
                   <div className='fs-5 fw-bold'>{data?.totCount?.thirdSection?.totNo}</div>
                   <CountDiv>+{data?.totCount?.thirdSection?.increaseBy}</CountDiv>
 
