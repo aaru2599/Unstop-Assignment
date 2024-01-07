@@ -1,0 +1,11 @@
+@media screen and (max-width: 508px) {
+    .main-div{
+        display: block;
+    }
+    
+}
+.assessment{
+    border:1px solid #0073e6;
+    background-color: #e5f1fc;
+    padding: 15px;
+}
