@@ -4,17 +4,22 @@ import Library from "../Library/Library";
 import Admin from "../Admin/Admin";
 import AssessmentPage from "../Assisment/AssessmentPage";
 import Navigation from "./Navigation";
+import MediaQuery from "react-responsive";
+import MainPath from "./MainPath";
 
 function RouterLayout() {
+    const isMobAndTab = MediaQuery({ query: '(max-width: 768px)' })
 
     const myRoutes = createBrowserRouter([
         // {
+
         //     path: "/",
         //     element: <Navigation />
         // },
+
         {
             path: "/",
-            element: <div className="d-flex gap-3 bg-secondary"><Navigation /><AssessmentPage /></div>
+            element: <MainPath/>
         },
         {
             path: "/dashboard",

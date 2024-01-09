@@ -1,0 +1,8 @@
+@media (max-width: 768px) {
+    .assessment-cls {
+        /* /* padding: calc(1.325rem + 0.9vw); */
+        font-size: 4rem !important; 
+
+        /* 1.125rem is small enough, so RFS won't rescale this */
+    }
+}
