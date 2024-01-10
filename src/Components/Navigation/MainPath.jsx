@@ -6,7 +6,7 @@ import AssessmentPage from '../Assisment/AssessmentPage'
 const MainPath = () => {
   // const isMobAndTab = useMediaQuery({ query: 'max-width:"768px"' });
   const isMobAndTab = useMediaQuery({
-    query: '(max-width: 765px)'
+    query: '(max-width: 768px)'
   })
   return (
     <div>
