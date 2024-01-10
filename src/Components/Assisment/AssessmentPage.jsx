@@ -99,18 +99,23 @@ const AssessmentPage = () => {
             </div>
             <div className="p-4">
                 <div className="container">
-                    <div className="d-flex flex-wrap justify-content-between rounded-4 border-1 row border">
-                        <div className="p-2 col-md-3 col-sm-6 order-md-1 order-sm-1">
-                            <AssessmentOverview data={allData.data1} />
+                    <div className="d-flex justify-content-between rounded-4 border-1 row border">
+                        <div className="d-flex">
+                            <div className="py-2 px-4 col-md-3 col-sm-6 order-md-1 order-sm-1">
+                                <AssessmentOverview data={allData.data1} />
+                            </div>
+                            <div className="col-md-6 col-sm-12 order-md-2 order-sm-3 border-start px-4 py-2">
+                                <AssessmentOverview data={allData.data2} />
+                            </div>
                         </div>
-                        <div className="col-md-3 col-sm-6 order-md-4 order-sm-2 border-start px-4 py-2">
-                            <AssessmentOverview data={allData.data4} />
-                        </div>
-                        <div className="col-md-6 col-sm-12 order-md-2 order-sm-3 border-start px-4 py-2">
-                            <AssessmentOverview data={allData.data2} />
-                        </div>
-                        <div className="col-md-12 col-sm-12 order-md-3 order-sm-4 border-start px-4 py-2">
-                            <AssessmentOverview data={allData.data3} />
+                        <div>
+                            <div className="col-md-12 col-sm-12 order-md-3 order-sm-4 border-start px-4 py-2">
+                                <AssessmentOverview data={allData.data3} />
+                            </div>
+                            <div className="col-md-3 col-sm-6 order-md-4 order-sm-2 border-start px-4 py-2">
+                                <AssessmentOverview data={allData.data4} />
+                            </div>
+
                         </div>
                     </div>
                 </div>
