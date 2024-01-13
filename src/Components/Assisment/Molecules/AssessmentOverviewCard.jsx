@@ -15,7 +15,7 @@ const AssessmentOverview = ({ data }) => {
   const thirdData=data?.totCount?.thirdSection?.totNo
   // console.log(data?.totCount?.thirdSection?.totNo?"yes":"no");
   return (
-    <div className='d-flex flex-column  p-1 gap-2'>
+    <div className='d-flex flex-column   gap-2'>
       <div>
         <div className='fw-medium'>{data.heading}</div>
       </div>

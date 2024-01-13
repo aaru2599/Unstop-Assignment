@@ -9,9 +9,9 @@ const MainPath = () => {
     query: '(max-width: 768px)'
   })
   return (
-    <div>
+    <div className='bg-body-secondary'>
       {
-        isMobAndTab?<div ><AssessmentPage/></div>:<div className='d-flex'><Navigation/><AssessmentPage/></div>
+        isMobAndTab?<div ><AssessmentPage/></div>:<div className='d-flex gap-2  ' ><Navigation/><AssessmentPage/></div>
       }
     </div>
   )

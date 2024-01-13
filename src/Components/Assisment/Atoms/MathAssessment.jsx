@@ -1,10 +1,15 @@
 import React from 'react'
+import { useMediaQuery } from 'react-responsive';
 
 const MathAssessment = ({ props }) => {
     console.log(props);
     const { assName, date, duration, icon, questions, share, title } = props
+    const isMobAndTab = useMediaQuery({
+        query: '(max-width: 765px)'
+    })
+    console.log(isMobAndTab);
     return (
-        <div className='d-flex flex-column border rounded-3 p-3 gap-1' style={{ width: "355px" }} >
+        <div className='d-flex flex-column border rounded-3 p-3 gap-1'  >
 
             <div className='d-flex justify-content-between'>
                 <div className='btn disabled rounded-3 border-0' style={{ backgroundColor: "#ebe8fd" }}>
@@ -32,16 +37,24 @@ const MathAssessment = ({ props }) => {
                         </div>
                     </div>
                     <div className='d-flex  gap-5  align-items-center '>
-                        <button className='d-flex align-items-center border border-dark  gap-2 btn-sm rounded-pill btn btn-outline'>
+                        <div className='d-flex align-items-center border fs-6  gap-1  rounded-pill px-2 py-1'>
                             <i className='bi bi-link'></i>
                             <div>Share</div>
-                        </button>
-
-                        <div className=' position-relative '>
-                            <div className='rounded-circle d-flex justify-content-center align-items-center text-white position-absolute  fw-medium  p-2' style={{ backgroundColor: "#3079a1", left: "-30px", bottom: "-15px", height: "25px", width: "25px" }}>{share}</div>
-                            <div className='rounded-circle d-flex justify-content-center align-items-center text-white position-absolute fw-medium p-2' style={{ backgroundColor: "#6548ee", left: "-20px", bottom: "-15px", height: "25px", width: "25px" }}>{share}</div>
-                            <div className='rounded-circle d-flex justify-content-center align-items-center text-white position-absolute fw-medium p-2' style={{ backgroundColor: "#e9407a", left: "-10px", bottom: "-15px", height: "25px", width: "25px" }}>{share}</div>
                         </div>
+
+                        <div className='d-flex justify-content-between align-items-center gap-4'>
+                            <div className=' position-relative '>
+                                <div className='rounded-circle d-flex justify-content-center align-items-center text-white position-absolute  fw-medium  p-2' style={{ backgroundColor: "#3079a1", left: "-30px", bottom: "-15px", height: "25px", width: "25px" }}>{share}</div>
+                                <div className='rounded-circle d-flex justify-content-center align-items-center text-white position-absolute fw-medium p-2' style={{ backgroundColor: "#6548ee", left: "-20px", bottom: "-15px", height: "25px", width: "25px" }}>{share}</div>
+                                <div className='rounded-circle d-flex justify-content-center align-items-center text-white position-absolute fw-medium p-2' style={{ backgroundColor: "#e9407a", left: "-10px", bottom: "-15px", height: "25px", width: "25px" }}>{share}</div>
+                            </div>
+                            <div>
+                                {
+                                    isMobAndTab && <div>+123</div>
+                                }
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

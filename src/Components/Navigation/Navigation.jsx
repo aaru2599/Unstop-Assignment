@@ -35,24 +35,24 @@ background-color:white;
 `;
 
   return (
-    <DivContainer className='     ' style={{ height: "100vh" }} >
- <div className='border-bottom   '>
-          <NavBox className='main-div'>
-            <i className='bi bi-ui-checks-grid'></i>
+    <DivContainer  >
+      <div className='border-bottom   '>
+        <NavBox className='main-div'>
+          <i className='bi bi-ui-checks-grid'></i>
 
-            <div className=''>Dashboard</div>
-          </NavBox>
-          <NavBox className='assessment'>
-            <i className='bi bi-clipboard-check'></i>
-            <div>Assisment</div>
-          </NavBox>
-          <NavBox className=''>
-            <i className='bi bi-journal-text'></i>
+          <div className=''>Dashboard</div>
+        </NavBox>
+        <NavBox className='assessment'>
+          <i className='bi bi-clipboard-check'></i>
+          <div>Assisment</div>
+        </NavBox>
+        <NavBox className=''>
+          <i className='bi bi-journal-text'></i>
 
-            <div>My Library</div>
-          </NavBox>
+          <div>My Library</div>
+        </NavBox>
 
-        </div>
+      </div>
       <div>
         <NavBox>
           <div ></div>
