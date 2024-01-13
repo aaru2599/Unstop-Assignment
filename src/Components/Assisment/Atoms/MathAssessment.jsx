@@ -1,5 +1,7 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive';
+import BagIcon from '../../Icons/BagIcon';
+import ThreeDotIcon from '../../Icons/ThreeDotIcon';
 
 const MathAssessment = ({ props }) => {
     console.log(props);
@@ -12,17 +14,19 @@ const MathAssessment = ({ props }) => {
         <div className='d-flex flex-column border rounded-3 p-3 gap-1'  >
 
             <div className='d-flex justify-content-between'>
-                <div className='btn disabled rounded-3 border-0' style={{ backgroundColor: "#ebe8fd" }}>
-                    <div className='p-1   '><i className='bi bi-bag'></i></div>
+                <div className='rounded-3' style={{ backgroundColor: "#ebe8fd" }}>
+                    <div className=' d-flex p-3   '><BagIcon/></div>
                 </div>
-                <div><i className='bi bi-three-dots-vertical'></i></div>
+                <div><ThreeDotIcon/></div>
             </div>
             <div className='d-flex flex-column gap-3'>
                 <div >
                     <div className='fw-medium fs-5'>{assName}</div>
                     <div className='d-flex gap-1 align-items-center'>
                         <div className='text-capitalize fw-medium '>{title}</div>
-                        <div className='d-flex gap-1 text-center align-items-center border-start text-info-emphasis fw-medium px-2' style={{ fontSize: "12px" }}><i className='bi bi-calendar'></i> <span>{date}</span></div>
+                        <div className='d-flex gap-1 text-center align-items-center border-start text-info-emphasis fw-medium px-2' style={{ fontSize: "12px" }}>
+                             <span>{date}</span>
+                             </div>
                     </div>
                 </div>
                 <div className='d-flex justify-content-between p-2 border-top'>
@@ -59,7 +63,7 @@ const MathAssessment = ({ props }) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default MathAssessment

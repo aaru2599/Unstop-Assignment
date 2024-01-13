@@ -11,7 +11,7 @@ const MainPath = () => {
   return (
     <div className='bg-body-secondary'>
       {
-        isMobAndTab?<div ><AssessmentPage/></div>:<div className='d-flex gap-2  ' ><Navigation/><AssessmentPage/></div>
+        isMobAndTab?<div ><AssessmentPage/></div>:<div className='d-flex justify-content-between gap-3  ' ><Navigation/><AssessmentPage/></div>
       }
     </div>
   )

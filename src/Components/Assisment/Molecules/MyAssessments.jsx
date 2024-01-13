@@ -17,16 +17,34 @@ const MyAssessments = () => {
     console.log("isTabletMid", isTabletMid);
     return (
 
-        <div className=' px-4 d-flex flex-column flex-md-row  '>
-            <div className='col-md-4 rounded-3 mb-3 mb-md-0' style={{ backgroundColor: "#f6f8fa", border: "1px dashed #dee2e6", borderStyle: "dashed" }}>
+        <div className=' px-4 d-flex flex-column gap-4 flex-md-row  '>
+            <div className='col-md-4 rounded-3 ' style={{ backgroundColor: "#f6f8fa", border: "1px dashed #dee2e6", borderStyle: "dashed" }}>
                 <NewAssessment />
             </div>
-            <div className='col-md-4 mb-3 mb-md-0'>
+            <div className='col-md-4 '>
                 <MathAssessment props={data} />
             </div>
             <div className='col-md-4'>
                 <MathAssessment props={data} />
             </div>
+            {
+                isTabletMid && (
+                    <div className='d-flex flex-column gap-4'>
+                        <div className=''>
+                            <MathAssessment props={data} />
+                        </div>
+                        <div className=''>
+                            <MathAssessment props={data} />
+                        </div>
+                        <div className=''>
+                            <MathAssessment props={data} />
+                        </div>
+                        <div className=''>
+                            <MathAssessment props={data} />
+                        </div>
+                    </div>
+                )
+            }
         </div>
 
 

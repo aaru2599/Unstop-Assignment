@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import "/src/Components/Navigation/Navigation.css"
 import { useMediaQuery } from 'react-responsive'
+import DashboardIcon from '../Icons/DashboardIcon'
+import Admin from '../Admin/Admin'
+import AdminIcon from '../Icons/Admin'
+import AssessmentIcon from '../Icons/AssessmentIcon'
+import MyLibraryIcon from '../Icons/MyLibraryIcon'
 
 const Navigation = () => {
   const NavBox = styled.div`
@@ -38,16 +43,16 @@ background-color:white;
     <DivContainer  >
       <div className='border-bottom   '>
         <NavBox className='main-div'>
-          <i className='bi bi-ui-checks-grid'></i>
+          <div className><DashboardIcon/></div>
 
           <div className=''>Dashboard</div>
         </NavBox>
         <NavBox className='assessment'>
-          <i className='bi bi-clipboard-check'></i>
+          <div className=''><AssessmentIcon/></div>
           <div>Assisment</div>
         </NavBox>
         <NavBox className=''>
-          <i className='bi bi-journal-text'></i>
+          <div ><MyLibraryIcon/></div>
 
           <div>My Library</div>
         </NavBox>
