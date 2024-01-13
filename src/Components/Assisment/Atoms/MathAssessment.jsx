@@ -2,6 +2,8 @@ import React from 'react'
 import { useMediaQuery } from 'react-responsive';
 import BagIcon from '../../Icons/BagIcon';
 import ThreeDotIcon from '../../Icons/ThreeDotIcon';
+import CalenderIcon from '../../Icons/Calender';
+import ShareIcon from '../../Icons/ShareLink';
 
 const MathAssessment = ({ props }) => {
     console.log(props);
@@ -15,9 +17,9 @@ const MathAssessment = ({ props }) => {
 
             <div className='d-flex justify-content-between'>
                 <div className='rounded-3' style={{ backgroundColor: "#ebe8fd" }}>
-                    <div className=' d-flex p-3   '><BagIcon/></div>
+                    <div className=' d-flex p-3   '><BagIcon /></div>
                 </div>
-                <div><ThreeDotIcon/></div>
+                <div><ThreeDotIcon /></div>
             </div>
             <div className='d-flex flex-column gap-3'>
                 <div >
@@ -25,25 +27,27 @@ const MathAssessment = ({ props }) => {
                     <div className='d-flex gap-1 align-items-center'>
                         <div className='text-capitalize fw-medium '>{title}</div>
                         <div className='d-flex gap-1 text-center align-items-center border-start text-info-emphasis fw-medium px-2' style={{ fontSize: "12px" }}>
-                             <span>{date}</span>
-                             </div>
+                            <div className='d-flex'><CalenderIcon /></div>
+                            <div>{date}</div>
+
+                        </div>
                     </div>
                 </div>
                 <div className='d-flex justify-content-between p-2 border-top'>
-                    <div className='d-flex gap-2'>
+                    <div className='d-flex gap-2 fw-medium'>
                         <div >
-                            <div className='fw-medium'>{duration}</div>
+                            <div className=''>{duration}</div>
                             <div style={{ fontSize: "12px" }}>Duration</div>
                         </div>
                         <div>
-                            <div className='fw-medium'>{questions}</div>
+                            <div className=''>{questions}</div>
                             <div style={{ fontSize: "12px" }}>Questions</div>
                         </div>
                     </div>
                     <div className='d-flex  gap-5  align-items-center '>
-                        <div className='d-flex align-items-center border fs-6  gap-1  rounded-pill px-2 py-1'>
-                            <i className='bi bi-link'></i>
-                            <div>Share</div>
+                        <div className='d-flex align-items-center   fs-6  gap-1  rounded-pill px-2 py-1'style={{border:"1px solid #1C4980"}}>
+                            <div className=''><ShareIcon/></div>
+                            <div className='fw-medium'>Share</div>
                         </div>
 
                         <div className='d-flex justify-content-between align-items-center gap-4'>
@@ -54,7 +58,7 @@ const MathAssessment = ({ props }) => {
                             </div>
                             <div>
                                 {
-                                    isMobAndTab && <div>+123</div>
+                                    isMobAndTab && <div className='fw-medium'>+123</div>
                                 }
                             </div>
                         </div>

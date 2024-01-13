@@ -49,7 +49,7 @@ background-color:white;
         </NavBox>
         <NavBox className='assessment'>
           <div className=''><AssessmentIcon/></div>
-          <div>Assisment</div>
+          <div>Assessment</div>
         </NavBox>
         <NavBox className=''>
           <div ><MyLibraryIcon/></div>

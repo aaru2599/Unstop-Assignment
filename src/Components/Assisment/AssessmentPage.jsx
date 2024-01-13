@@ -1,19 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import AssessmentOverview from "./Molecules/AssessmentOverviewCard";
 import MyAssessments from "./Molecules/MyAssessments";
 import AssessmentHeading from "./Atoms/AssessmentHeading";
 import LeftDashboard from "../Icons/LeftDashboard";
-import "/src/Components/Assisment/AssessmentCss.css"
 import { useMediaQuery } from "react-responsive";
 import Navigation from "../Navigation/Navigation";
 import SearchIcon from "../Icons/SearchIcon";
 import FilterIcon from "../Icons/FilterIcon";
 import BarChartIcon from "../Icons/BarChartIcon";
 const AssessmentPage = () => {
+    const [isBorderActive, setIsBorderActive] = useState(false)
+    const handleBtnClick = () => {
+        setIsBorderActive((prev) => !prev)
+    }
+    console.log("isBorderActive", isBorderActive);
     const allData = {
         data1: {
             heading: "Total Assessment",
-            bgColor:"#EBE8FD",
+            bgColor: "#EBE8FD",
             logo: <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -37,7 +41,7 @@ const AssessmentPage = () => {
         },
         data2: {
             heading: "Candidates",
-            bgColor:"#EBE8FD",
+            bgColor: "#EBE8FD",
             logo: <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -78,7 +82,7 @@ const AssessmentPage = () => {
         },
         data3: {
             heading: "Candidates Source",
-            bgColor:"#FCE8EF",
+            bgColor: "#FCE8EF",
             logo: <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -124,7 +128,7 @@ const AssessmentPage = () => {
         },
         data4: {
             heading: "Total Purpose",
-            bgColor:"#E5F1FC",
+            bgColor: "#E5F1FC",
             logo: <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -158,7 +162,7 @@ const AssessmentPage = () => {
     const isMobAndTab = useMediaQuery({
         query: '(max-width: 765px)'
     })
-    console.log(isMobAndTab);
+    // console.log(isMobAndTab);
     return (
         <div className="bg-white  " style={{ color: "#1c4980" }}>
 
@@ -166,21 +170,22 @@ const AssessmentPage = () => {
             <div className="px-4 py-2 border-bottom align-items-center">
                 <div className="d-lg-flex d-md-flex">
                     <div className="d-flex align-items-center">
-                        <div className="d-md-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        <div className="bg-body-secondary p-1 rounded-5 d-md-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                             <LeftDashboard />
                         </div>
-                        <div className="fs-4 p-2 border-end border-2 border-sm-end-0 assessment-cls fw-medium">Assessment</div>
+                        <div className={`fs-4 p-2 border-end border-2 ${isMobAndTab?"border-end-0":""}  fw-medium`}>Assessment</div>
                     </div>
                     <div className="d-flex p-2 p align-items-center justify-content-between">
                         <div className="fs-5 px-2 d-sm-flex d-lg-block text-primary">My Assessments</div>
-                        <div className="d-sm-block d-md-none">Unstop Assessment</div>
+                        <div className="fs-5 d-sm-block d-md-none">Unstop Assessment</div>
                     </div>
                 </div>
                 <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style={{ width: "200px" }}>
-                    <div className="offcanvas-header">
-                        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div className="offcanvas-header d-flex">
+                        <div className="">Menu</div>
+                        <button type="button" className="btn btn-sm btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div className="offcanvas-body overflow-hidden">
+                    <div className="">
                         <Navigation />
                     </div>
                 </div>
@@ -189,10 +194,10 @@ const AssessmentPage = () => {
             <div className="d-flex flex-column-reverse justify-content-between align-items-center ">
                 <div className="d-flex justify-content-between align-items-center w-100">
                     <AssessmentHeading data={"My Assessment"} />
-                    <div className="d-flex d-md-none">
+                    <div className="d-flex align-items-center gap-3 px-4 d-md-none">
                         <div><SearchIcon /></div>
-                        <div><FilterIcon /></div>
-                        <div type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><BarChartIcon /></div>
+                        <div className=""><FilterIcon /></div>
+                        <div className={`${isBorderActive?"d-flex border rounded rounded-5 p-2 border-2":""}`} onClick={handleBtnClick} type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><BarChartIcon /></div>
                     </div>
                 </div>
                 <div className="collapse d-md-block w-100 " id="collapseExample">
@@ -207,15 +212,15 @@ const AssessmentPage = () => {
                             <div className="py-2 px-4  ">
                                 <AssessmentOverview data={allData.data1} />
                             </div>
-                            <div className="py-2 px-4  border-start order-sm-2 order-md-2 order-lg-4  ">
+                            <div className={`py-2 px-4  border-start order-sm-2 order-md-2 order-lg-4 ${isMobAndTab?"border":""} `}>
                                 <AssessmentOverview data={allData.data4} />
                             </div>
                         </div>
-                        <div className={`py-2 px-4 ${isMobAndTab ? "border-bottom border-start-0" : ""}  order-sm-3 border-start border-0`}>
+                        <div className={`py-2 px-4 ${isMobAndTab ? " border-start-0" : ""}  order-sm-3 border-start `}>
                             <AssessmentOverview data={allData.data2} />
                         </div>
 
-                        <div className={`py-2 px-4   order-sm-3 border-start ${isMobAndTab ? "border-start-0" : ""} `}>
+                        <div className={`py-2 px-4   order-sm-3 border-start ${isMobAndTab ? "border border-end-0 border-start-0 border-bottom-0" : ""} `}>
                             <AssessmentOverview data={allData.data3} />
                         </div>
                     </div>
