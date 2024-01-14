@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import "/src/Components/Assisment/Atoms/ModalForm.css";
+import CrossIcon from "../../Icons/CrossIcon";
 
 const ModalForm = (props) => {
   //console.log("props", props.data);
@@ -36,12 +37,14 @@ const ModalForm = (props) => {
             <h1 className="modal-title fs-5" id="exampleModalLabel">
               Sub-Section Details{" "}
             </h1>
-            <button
+            <div
               type="button"
-              className="btn-close"
+              className="border rounded-5  "
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
+            >
+              <CrossIcon/>
+            </div>
           </div>
           <div className="modal-body d-flex flex-column gap-3">
             <DivContainer>
