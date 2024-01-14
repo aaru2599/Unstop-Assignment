@@ -1,10 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "/src/Components/Navigation/Navigation.css";
-import { useMediaQuery } from "react-responsive";
 import DashboardIcon from "../Icons/DashboardIcon";
-import Admin from "../Admin/Admin";
 import AdminIcon from "../Icons/Admin";
 import AssessmentIcon from "../Icons/AssessmentIcon";
 import MyLibraryIcon from "../Icons/MyLibraryIcon";

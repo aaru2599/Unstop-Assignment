@@ -1,8 +1,6 @@
 import NewAssessment from "../Atoms/NewAssessment";
 import MathAssessment from "../Atoms/MathAssessment";
-import { useMediaQuery } from "react-responsive";
-
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const MyAssessments = () => {
   const data = {
@@ -14,34 +12,28 @@ const MyAssessments = () => {
     questions: "00",
     share: "LP",
   };
-  const isTabletMid = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <div className="p-4">
-      <Row className="d-flex flex-wrap gap-2">
-        <Col >
-          <NewAssessment />
-        </Col>
-        <Col>
-          <MathAssessment props={data} />
-        </Col>
-        <Col>
-          <MathAssessment props={data} />
-        </Col>
-        {
-          isTabletMid && <>
-            <Col>
+      <Row className="d-flex flex-wrap">
+        {[...Array(8)].map((_, index) => (
+          <Col
+            key={index}
+            xs={12}
+            md={6}
+            lg={6}
+            xl={4}
+            style={{ marginBottom: "16px" }}
+          >
+            {index === 0 ? (
+              <NewAssessment props={data} />
+            ) : (
               <MathAssessment props={data} />
-            </Col>
-            <Col>
-              <MathAssessment props={data} />
-            </Col>
-          </>
-        }
-
+            )}
+          </Col>
+        ))}
       </Row>
     </div>
-
   );
 };
 

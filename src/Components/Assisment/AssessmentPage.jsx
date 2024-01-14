@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import AssessmentOverview from "./Molecules/AssessmentOverviewCard";
 import MyAssessments from "./Molecules/MyAssessments";
 import AssessmentHeading from "./Atoms/AssessmentHeading";
@@ -8,7 +8,7 @@ import Navigation from "../Navigation/Navigation";
 import SearchIcon from "../Icons/SearchIcon";
 import FilterIcon from "../Icons/FilterIcon";
 import BarChartIcon from "../Icons/BarChartIcon";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const AssessmentPage = () => {
   const [isBorderActive, setIsBorderActive] = useState(false);
@@ -171,13 +171,11 @@ const AssessmentPage = () => {
   const isMobAndTab = useMediaQuery({
     query: "(max-width: 765px)",
   });
-  
+
   const isMobile = useMediaQuery({
     query: "(max-width: 458px)",
   });
-  const isSMMobile=useMediaQuery({ query: "(max-width: 389px)" })
 
-  // //console.log(isMobAndTab);
   return (
     <div className="bg-white w-100" style={{ color: "#1c4980" }}>
       <div className="px-4 py-2 border-bottom align-items-center">
@@ -192,17 +190,26 @@ const AssessmentPage = () => {
               <LeftDashboard />
             </div>
             <div
-              className={`fs-4 p-2 border-end border-2 ${isMobAndTab ? "border-end-0" : ""
-                }  fw-medium`}
+              className={`fs-4 p-2 border-end border-2 ${
+                isMobAndTab ? "border-end-0" : ""
+              }  fw-medium`}
             >
               Assessment
             </div>
           </div>
           <div className="d-flex p-2 p align-items-center justify-content-between">
-            <div className={`fs-5 px-2 d-sm-flex d-lg-block text-primary ${isMobile?"fs-6":""}`}>
+            <div
+              className={`fs-5 px-2 d-sm-flex d-lg-block text-primary ${
+                isMobile ? "fs-6" : ""
+              }`}
+            >
               My Assessments
             </div>
-            <div className={`fs-5 d-sm-block  d-md-none ${isMobile?"fs-6":""}`}>Unstop Assessment</div>
+            <div
+              className={`fs-5 d-sm-block  d-md-none ${isMobile ? "fs-6" : ""}`}
+            >
+              Unstop Assessment
+            </div>
           </div>
         </div>
         <div
@@ -238,10 +245,11 @@ const AssessmentPage = () => {
               <FilterIcon />
             </div>
             <div
-              className={`${isBorderActive
-                ? "d-flex border rounded rounded-5 p-2 border-2"
-                : ""
-                }`}
+              className={`${
+                isBorderActive
+                  ? "d-flex border rounded rounded-5 p-2 border-2"
+                  : ""
+              }`}
               onClick={handleBtnClick}
               type="button"
               data-bs-toggle="collapse"
@@ -257,8 +265,8 @@ const AssessmentPage = () => {
           <div className="d-md-block d-none ">
             <AssessmentHeading data={"Assessment Overview"} />
           </div>
-          {
-            isMobAndTab && <Row className="mx-4 my-2 d-flex justify-content-between rounded-4 border-1 col border flex-wrap">
+          {isMobAndTab && (
+            <Row className="mx-4 my-2 d-flex justify-content-between rounded-4 border-1 col border flex-wrap">
               <Col className="border-bottom">
                 <div className=" py-2  order-md-1 order-lg-1">
                   <AssessmentOverview data={allData.data1} />
@@ -274,63 +282,65 @@ const AssessmentPage = () => {
               </Col>
               <Col className="border-bottom">
                 <div
-                  className={`py-2  order-md-2 order-sm-3 border-start ${isMobAndTab ? "border-start-0" : ""}`}
+                  className={`py-2  order-md-2 order-sm-3 border-start ${
+                    isMobAndTab ? "border-start-0" : ""
+                  }`}
                 >
                   <AssessmentOverview data={allData.data2} />
                 </div>
               </Col>
               <Col>
                 <div
-                  className={`py-2  order-sm-4 order-lg-3 border-start ${isMobAndTab
-                    ? " border-end-0 border-start-0 border-bottom-0"
-                    : ""
-                    } `}
+                  className={`py-2  order-sm-4 order-lg-3 border-start ${
+                    isMobAndTab
+                      ? " border-end-0 border-start-0 border-bottom-0"
+                      : ""
+                  } `}
                 >
                   <AssessmentOverview data={allData.data3} />
                 </div>
               </Col>
             </Row>
-          }
+          )}
 
-
-
-          {
-            !isMobAndTab && <div className="mx-4 my-2 d-flex justify-content-between rounded-4 border-1 col border flex-wrap">
+          {!isMobAndTab && (
+            <div className="mx-4 my-2 d-flex justify-content-between rounded-4 border-1 col border flex-wrap">
               {/* <di/v className={`d-flex ${isMobAndTab ? "border-bottom" : ""}`}> */}
               <div className="py-2 px-4 order-md-1 order-lg-1">
                 <AssessmentOverview data={allData.data1} />
               </div>
               <div
-                className={`py-2 px-4 border-start order-md-4 order-lg-4 ${isMobAndTab ? "" : ""
-                  } `}
+                className={`py-2 px-4 border-start order-md-4 order-lg-4 ${
+                  isMobAndTab ? "" : ""
+                } `}
               >
                 <AssessmentOverview data={allData.data4} />
               </div>
               {/* </div> */}
               <div
-                className={`py-2 px-4 order-md-2 order-sm-3 border-start ${isMobAndTab ? "border" : ""}`}
+                className={`py-2 px-4 order-md-2 order-sm-3 border-start ${
+                  isMobAndTab ? "border" : ""
+                }`}
               >
                 <AssessmentOverview data={allData.data2} />
               </div>
               <div
-                className={`py-2 px-4 order-sm-4 order-lg-3 border-start ${isMobAndTab
-                  ? " border-end-0 border-start-0 border-bottom-0"
-                  : ""
-                  } `}
+                className={`py-2 px-4 order-sm-4 order-lg-3 border-start ${
+                  isMobAndTab
+                    ? " border-end-0 border-start-0 border-bottom-0"
+                    : ""
+                } `}
               >
                 <AssessmentOverview data={allData.data3} />
               </div>
             </div>
-
-          }
+          )}
         </div>
       </div>
 
       <div className="">
         <MyAssessments />
       </div>
-
-
     </div>
   );
 };
