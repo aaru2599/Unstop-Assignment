@@ -7,11 +7,10 @@ import MyLibraryIcon from "../Icons/MyLibraryIcon";
 import { useMediaQuery } from "react-responsive";
 
 const Navigation = () => {
-  // const isMobile=useMediaQuery({query:"(max-width:768px)"})
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
-  console.log("isMobilevvv", isMobile);
+
   const NavBox = styled.div`
     border-radius: 10px;
     padding: 15px;
@@ -23,30 +22,33 @@ const Navigation = () => {
 
     @media (max-width: 768px) {
       display: flex;
-      // justify-content: space-between;
-      // align-items:center
       flex-direction: row;
       gap: 20px;
     }
   `;
 
-
   const DivContainer = styled.div`
     text-align: center;
     padding: 20px;
     padding-top: 0;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    gap:20px;
+    flex-direction: column;
     font-size: 13px;
     background-color: white;
-    
   `;
+
   const AdminOuter = styled.div`
-border:1px solid;
-border-radius:15px;
-font-size:12px;
-padding:0px 8px;
-`;
+    border: 1px solid;
+    border-radius: 15px;
+    // font-size: 12px;
+    
+    margin:0px 10px;
+    width:50px;
+    color:#D63500;
+    background-color:"#FBEBEA";
+  `;
+
   return (
     <DivContainer>
       <div className="border-bottom fw-medium">
@@ -69,37 +71,34 @@ padding:0px 8px;
           <div>My Library</div>
         </NavBox>
       </div>
-      <div className="d-flex ">
-        <div className="d-none d-sm-flex ">
-          {/* Desktop View - Hidden on Small Screens */}
-          <div>
-            <AdminOuter >
-              <div>Admin</div>
-            </AdminOuter>
-            <div>
-              <AdminIcon />
-            </div>
-            <div>Round Status</div>
-          </div>
-        </div>
-
-        {/* Mobile View - Hidden on Larger Screens */}
+      <div className=" ">
         {
-          isMobile && <div className="  d-sm-none justify-content-between d-flex flex-row p-4 align-items-center">
-            <div className="d-flex align-items-center gap-2">
+          isMobile ?
+            <div className="fw-medium d-flex justify-content-between">
+              <div className="d-flex gap-2 px-4">
+                <div>
+                  <AdminIcon />
+                </div>
+                <div className="px-2"style={{color:"#1c4980"}}>Round Status</div>
+              </div>
+              <AdminOuter >
+                <div className="text-center">Admin</div>
+              </AdminOuter>
+            </div> :
+            <div className="d-flex fw-medium flex-column align-items-center gap-3">
+              <AdminOuter>
+                <div className="text-center">Admin</div>
+              </AdminOuter>
               <div>
                 <AdminIcon />
               </div>
-              <div>Round Status</div>
+              <div className="w-50" style={{color:"#1c4980"}}>Round Status</div>
             </div>
-            <AdminOuter>
-              <div >Admin</div>
-            </AdminOuter>
-          </div>
         }
 
-      </div>
 
+
+      </div>
     </DivContainer>
   );
 };
