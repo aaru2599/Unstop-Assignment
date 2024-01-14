@@ -26,9 +26,9 @@ const MathAssessment = ({ props }) => {
                     <div className='fw-medium fs-5'>{assName}</div>
                     <div className='d-flex gap-1 align-items-center'>
                         <div className='text-capitalize fw-medium '>{title}</div>
-                        <div className='d-flex gap-1 text-center align-items-center border-start text-info-emphasis fw-medium px-2' style={{ fontSize: "12px" }}>
+                        <div className='d-flex gap-1 text-center align-items-center border-start  fw-medium px-2' style={{ fontSize: "12px" }}>
                             <div className='d-flex'><CalenderIcon /></div>
-                            <div>{date}</div>
+                            <div className=' text-secondary text-opacity-50'>{date}</div>
 
                         </div>
                     </div>
