@@ -2,11 +2,13 @@ import BagIcon from "../../Icons/BagIcon";
 import ThreeDotIcon from "../../Icons/ThreeDotIcon";
 import CalenderIcon from "../../Icons/Calender";
 import ShareIcon from "../../Icons/ShareLink";
+import { useMediaQuery } from "react-responsive";
 
 const MathAssessment = ({ props }) => {
   //console.log(props);
   const { assName, date, duration, questions, share, title } = props;
 
+  const isMobAndTab = useMediaQuery({ query: "(max-width:768px)" })
   return (
     <div className="border rounded-3">
       <div
@@ -100,8 +102,9 @@ const MathAssessment = ({ props }) => {
                     {share}
                   </div>
                 </div>
-                {/*               <div>{isMobAndTab && <div className="fw-medium">+123</div>}</div>
-                 */}{" "}
+
+                {/* <div>{isMobAndTab && <div className="fw-medium">+123</div>}</div> */}
+
               </div>
             </div>
           </div>

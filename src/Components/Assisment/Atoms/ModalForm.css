@@ -3,7 +3,7 @@
     opacity: 1;
     } */
 input::placeholder {
-  color: #1c4980 !important;
+  /* color: #1c4980 !important; */
   opacity: 1;
   /* Firefox */
 }

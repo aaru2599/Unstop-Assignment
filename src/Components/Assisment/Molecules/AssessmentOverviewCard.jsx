@@ -13,7 +13,6 @@ const AssessmentOverview = ({ data }) => {
     font-weight: bold;
   `;
   const isMobile=useMediaQuery({ query: "(max-width: 458px)" })
-  const isSMMobile=useMediaQuery({ query: "(max-width: 389px)" })
 console.log("isMobile",isMobile);
   const thirdData = data?.totCount?.thirdSection?.totNo;
   // console.log(data?.totCount?.thirdSection?.totNo?"yes":"no");
@@ -37,7 +36,7 @@ console.log("isMobile",isMobile);
             <div className="d-flex flex-column border-end px-1 ">
               <div className="d-flex align-items-center">
                 <div className={`fs-5 fw-bold ${isMobile?"fs-6":""}`}>
-                  {data.totCount.firstSection.totNo}
+                  {data.totCount?.firstSection?.totNo}
                 </div>
                 <CountDiv>+{data.totCount.firstSection.increaseBy}</CountDiv>
               </div>

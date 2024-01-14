@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import styled from "styled-components";
 import "/src/Components/Assisment/Atoms/ModalForm.css";
 import CrossIcon from "../../Icons/CrossIcon";
 
-const ModalForm = (props) => {
+const ModalForm = () => {
   //console.log("props", props.data);
-  useEffect(() => {
-    const { id, data_bs_backdrop } = props;
-  }, []);
+  // useEffect(() => {
+  //   const { id, data_bs_backdrop } = props;
+  // }, []);
 
   const DivContainer = styled.div`
     display: flex;
@@ -52,7 +52,7 @@ const ModalForm = (props) => {
               <input
                 id="assessmentName"
                 type="text"
-                className="text-primary form-control"
+                className=" form-control"
                 placeholder="Type here"
               />
             </DivContainer>
