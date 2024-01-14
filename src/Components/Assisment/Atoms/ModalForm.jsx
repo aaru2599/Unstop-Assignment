@@ -14,6 +14,14 @@ const ModalForm = (props) => {
     gap: 10px;
   `;
 
+  const skillData = [
+    { data: "UI/UX and Design" },
+    { data: "Web Development" },
+    { data: "UI/UX and Design" },
+    { data: "Web Development" },
+    { data: "No of Questions" },
+  ]
+  console.log("skillData", skillData);
   return (
     <div
       className="modal fade"
@@ -22,7 +30,7 @@ const ModalForm = (props) => {
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div className="modal-dialog">
+      <div className="modal-dialog " >
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="exampleModalLabel">
@@ -57,23 +65,7 @@ const ModalForm = (props) => {
                   <div>Select</div>
                   <i className="bi bi-chevron-down"></i>
                 </button>
-                <ul className="dropdown-menu">
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Action
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Another action
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Something else here
-                    </button>
-                  </li>
-                </ul>
+               
               </div>
             </DivContainer>
             <DivContainer>
@@ -88,33 +80,32 @@ const ModalForm = (props) => {
                   <div>Select</div>
                   <i className="bi bi-chevron-down"></i>
                 </button>
-                <ul className="dropdown-menu w-75">
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Action
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Another action
-                    </button>
-                  </li>
-                  <li>
-                    <button className="dropdown-item" type="button">
-                      Something else here
-                    </button>
-                  </li>
-                </ul>
+               
               </div>
             </DivContainer>
             <DivContainer>
               <label htmlFor="skills">Skills</label>
-              <input
-                id="skills"
-                type="text"
-                className="form-control"
-                placeholder="Type here"
-              />
+              <div className="border rounded">
+                <div className=" p-3 " >
+                  <div className="row row-cols-3 gap-2 p-2">
+                    {skillData.map((item, index) => (
+                      <div
+                        key={index}
+                        className="col-md-3 p-2 mainfuc  d-flex bg-body-secondary rounded-5 justify-content-between align-items-center "
+                        style={{ width: "180px", }}
+                      >
+                        <div >{item.data}</div>
+                        <div className="bi bi-x"></div>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+                <div className="border-top ">
+                  <input type="text" placeholder="Type here" className="form-control p-2 outline-0 border-0" />
+                </div>
+              </div>
+
             </DivContainer>
             <DivContainer>
               <label htmlFor="duration">Duration of assessment</label>

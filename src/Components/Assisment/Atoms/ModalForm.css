@@ -4,10 +4,13 @@
     } */
 input::placeholder {
   color: #1c4980 !important;
-  opacity: 1; /* Firefox */
+  opacity: 1;
+  /* Firefox */
 }
 
-::-ms-input-placeholder {
-  /* Edge 12-18 */
-  color: red;
+@media (max-width: 768) {
+.mainfuc  {
+  /* font-size: 10px; */
+  width: 120px;
+}
 }

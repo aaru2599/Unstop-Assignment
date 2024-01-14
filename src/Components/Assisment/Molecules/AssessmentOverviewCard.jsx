@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 
 const AssessmentOverview = ({ data }) => {
@@ -11,13 +12,15 @@ const AssessmentOverview = ({ data }) => {
     color: #15c56f;
     font-weight: bold;
   `;
-
+  const isMobile=useMediaQuery({ query: "(max-width: 458px)" })
+  const isSMMobile=useMediaQuery({ query: "(max-width: 389px)" })
+console.log("isMobile",isMobile);
   const thirdData = data?.totCount?.thirdSection?.totNo;
-  // //console.log(data?.totCount?.thirdSection?.totNo?"yes":"no");
+  // console.log(data?.totCount?.thirdSection?.totNo?"yes":"no");
   return (
     <div className="d-flex flex-column   ">
       <div>
-        <div className="fw-medium">{data.heading}</div>
+        <div className="fw-medium " style={{fontSize:`${isMobile?"12px":""}`}}>{data.heading}</div>
       </div>
       <div className={`d-flex  align-items-center`}>
         <div className=" ">
@@ -30,10 +33,10 @@ const AssessmentOverview = ({ data }) => {
         </div>
         {/* Check if totCount is an object, if yes, render its properties */}
         {typeof data.totCount === "object" ? (
-          <div className="d-flex gap-3">
-            <div className="d-flex flex-column border-end px-3 ">
+          <div className={`d-flex gap-3 ${isMobile?"gap-1":""}`}>
+            <div className="d-flex flex-column border-end px-1 ">
               <div className="d-flex align-items-center">
-                <div className="fs-5 fw-bold">
+                <div className={`fs-5 fw-bold ${isMobile?"fs-6":""}`}>
                   {data.totCount.firstSection.totNo}
                 </div>
                 <CountDiv>+{data.totCount.firstSection.increaseBy}</CountDiv>
@@ -42,7 +45,7 @@ const AssessmentOverview = ({ data }) => {
             </div>
             <div className={`${thirdData ? "border-end px-3" : ""}`}>
               <div className="d-flex  align-items-center">
-                <div className="fs-5 fw-bold">
+                <div className={`fs-5 fw-bold ${isMobile?"fs-6":""}`}>
                   {data.totCount.secondSection.totNo}
                 </div>
                 <CountDiv>+{data.totCount.secondSection.increaseBy}</CountDiv>
@@ -53,7 +56,7 @@ const AssessmentOverview = ({ data }) => {
             {data?.totCount?.thirdSection?.totNo ? (
               <div>
                 <div className="d-flex align-items-center">
-                  <div className="fs-5 fw-bold">
+                  <div className={`fs-5 fw-bold ${isMobile?"fs-6":""}`}>
                     {data?.totCount?.thirdSection?.totNo}
                   </div>
                   <CountDiv>
@@ -68,7 +71,7 @@ const AssessmentOverview = ({ data }) => {
           </div>
         ) : (
           // If totCount is not an object, render a single value
-          <div className=" px-3 d-flex p-2 fs-5 fw-bold ">{data.totCount}</div>
+          <div className={`px-3 d-flex p-2 fs-5 fw-bold ${isMobile?"fs-6":""}`}>{data.totCount}</div>
         )}
       </div>
     </div>

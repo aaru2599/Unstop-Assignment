@@ -18,8 +18,8 @@ const MyAssessments = () => {
 
   return (
     <div className="p-4">
-      <Row className="d-flex gap-2">
-        <Col>
+      <Row className="d-flex flex-wrap gap-2">
+        <Col >
           <NewAssessment />
         </Col>
         <Col>
@@ -35,14 +35,13 @@ const MyAssessments = () => {
             </Col>
             <Col>
               <MathAssessment props={data} />
-            </Col> <Col>
-              <MathAssessment props={data} />
             </Col>
-
           </>
         }
+
       </Row>
     </div>
+
   );
 };
 

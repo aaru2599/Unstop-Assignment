@@ -171,6 +171,12 @@ const AssessmentPage = () => {
   const isMobAndTab = useMediaQuery({
     query: "(max-width: 765px)",
   });
+  
+  const isMobile = useMediaQuery({
+    query: "(max-width: 458px)",
+  });
+  const isSMMobile=useMediaQuery({ query: "(max-width: 389px)" })
+
   // //console.log(isMobAndTab);
   return (
     <div className="bg-white w-100" style={{ color: "#1c4980" }}>
@@ -193,10 +199,10 @@ const AssessmentPage = () => {
             </div>
           </div>
           <div className="d-flex p-2 p align-items-center justify-content-between">
-            <div className="fs-5 px-2 d-sm-flex d-lg-block text-primary">
+            <div className={`fs-5 px-2 d-sm-flex d-lg-block text-primary ${isMobile?"fs-6":""}`}>
               My Assessments
             </div>
-            <div className="fs-5 d-sm-block d-md-none">Unstop Assessment</div>
+            <div className={`fs-5 d-sm-block  d-md-none ${isMobile?"fs-6":""}`}>Unstop Assessment</div>
           </div>
         </div>
         <div
@@ -254,7 +260,7 @@ const AssessmentPage = () => {
           {
             isMobAndTab && <Row className="mx-4 my-2 d-flex justify-content-between rounded-4 border-1 col border flex-wrap">
               <Col className="border-bottom">
-                <div className=" py-2 px-4 order-md-1 order-lg-1">
+                <div className=" py-2  order-md-1 order-lg-1">
                   <AssessmentOverview data={allData.data1} />
                 </div>
               </Col>
@@ -268,14 +274,14 @@ const AssessmentPage = () => {
               </Col>
               <Col className="border-bottom">
                 <div
-                  className={`py-2 px-4 order-md-2 order-sm-3 border-start ${isMobAndTab ? "border-start-0" : ""}`}
+                  className={`py-2  order-md-2 order-sm-3 border-start ${isMobAndTab ? "border-start-0" : ""}`}
                 >
                   <AssessmentOverview data={allData.data2} />
                 </div>
               </Col>
               <Col>
                 <div
-                  className={`py-2 px-4 order-sm-4 order-lg-3 border-start ${isMobAndTab
+                  className={`py-2  order-sm-4 order-lg-3 border-start ${isMobAndTab
                     ? " border-end-0 border-start-0 border-bottom-0"
                     : ""
                     } `}
@@ -324,16 +330,7 @@ const AssessmentPage = () => {
         <MyAssessments />
       </div>
 
-      {/* <div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 order-md-1">Box 1</div>
-                        <div class="col-md-3 col-sm-6 order-md-3 order-sm-4">Box 2</div>
-                        <div class="col-md-3 col-sm-6 order-md-4 order-sm-3">Box 3</div>
-                        <div class="col-md-3 col-sm-6 order-md-2 order-sm-2">Box 4</div>
-                    </div>
-                </div>
-            </div> */}
+
     </div>
   );
 };
