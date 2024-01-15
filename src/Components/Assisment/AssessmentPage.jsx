@@ -190,21 +190,22 @@ const AssessmentPage = () => {
               <LeftDashboard />
             </div>
             <div
-              className={`fs-4 p-2 border-end border-2 ${isMobAndTab ? "border-end-0" : ""
-                }  fw-medium`}
+              className={`fs-5 pe-2 border-end border-2 ${isMobAndTab ? "border-end-0 fs-5" : ""
+                }  fw-semibold`}
+            // style={{fontWeight:"600"}}
             >
               Assessment
             </div>
           </div>
           <div className="d-flex p-2 p align-items-center justify-content-between">
             <div
-              className={`fs-5 px-2 d-sm-flex d-lg-block text-primary ${isMobile ? "fs-6" : ""
+              className={`fs-6 fw-semibold px-2 d-sm-flex d-lg-block text-primary ${isMobile ? "fs-6" : ""
                 }`}
             >
               My Assessments
             </div>
             <div
-              className={`fs-5 d-sm-block  d-md-none ${isMobile ? "fs-6" : ""}`}
+              className={`fs-5 d-sm-block  d-md-none ${isMobAndTab ? "fs-6" : ""}`}
             >
               Unstop Assessment
             </div>
@@ -234,7 +235,7 @@ const AssessmentPage = () => {
       </div>
 
       <div className="d-flex flex-column-reverse justify-content-between align-items-center ">
-        <div className="d-flex justify-content-between align-items-center w-100">
+        <div className="d-flex justify-content-between align-items-center w-100 pt-2">
           <AssessmentHeading data={"My Assessment"} />
           <div className="d-flex align-items-center gap-3 px-4 d-md-none">
             <div>
@@ -245,8 +246,8 @@ const AssessmentPage = () => {
             </div>
             <div
               className={`${isBorderActive
-                  ? "d-flex border rounded rounded-5 p-2 border-2"
-                  : ""
+                ? "d-flex border rounded rounded-5 p-2 border-2"
+                : ""
                 }`}
               onClick={handleBtnClick}
               type="button"
@@ -289,8 +290,8 @@ const AssessmentPage = () => {
               <Col>
                 <div
                   className={`py-2  order-sm-4 order-lg-3 border-start ${isMobAndTab
-                      ? " border-end-0 border-start-0 border-bottom-0"
-                      : ""
+                    ? " border-end-0 border-start-0 border-bottom-0"
+                    : ""
                     } `}
                 >
                   <AssessmentOverview data={allData.data3} />
@@ -300,7 +301,7 @@ const AssessmentPage = () => {
           )}
 
           {!isMobAndTab && (
-            <div className="mx-4 my-2 d-flex justify-content-between rounded-4 border-1 col border flex-wrap">
+            <div className="mx-4 my-2 d-flex justify-content-around rounded-4 border-1 col border flex-wrap">
               {/* <di/v className={`d-flex ${isMobAndTab ? "border-bottom" : ""}`}> */}
               <div className="py-2 px-4 order-md-1 order-lg-1">
                 <AssessmentOverview data={allData.data1} />
@@ -320,8 +321,8 @@ const AssessmentPage = () => {
               </div>
               <div
                 className={`py-2 px-4 order-sm-4 order-lg-3 border-start ${isMobAndTab
-                    ? " border-end-0 border-start-0 border-bottom-0"
-                    : ""
+                  ? " border-end-0 border-start-0 border-bottom-0"
+                  : ""
                   } `}
               >
                 <AssessmentOverview data={allData.data3} />

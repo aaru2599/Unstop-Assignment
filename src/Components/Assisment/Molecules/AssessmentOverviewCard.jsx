@@ -17,12 +17,12 @@ console.log("isMobile",isMobile);
   const thirdData = data?.totCount?.thirdSection?.totNo;
   // console.log(data?.totCount?.thirdSection?.totNo?"yes":"no");
   return (
-    <div className="d-flex flex-column   ">
+    <div className="d-flex flex-column py-2  ">
       <div>
         <div className="fw-medium " style={{fontSize:`${isMobile?"12px":""}`}}>{data.heading}</div>
       </div>
       <div className={`d-flex  align-items-center`}>
-        <div className=" ">
+        <div className="px-2 ">
           <div
             className="d-flex p-2  rounded-3"
             style={{ backgroundColor: `${data.bgColor}` }}
@@ -33,7 +33,7 @@ console.log("isMobile",isMobile);
         {/* Check if totCount is an object, if yes, render its properties */}
         {typeof data.totCount === "object" ? (
           <div className={`d-flex gap-3 ${isMobile?"gap-1":""}`}>
-            <div className="d-flex flex-column border-end px-1 ">
+            <div className="d-flex flex-column border-end px-2 ">
               <div className="d-flex align-items-center">
                 <div className={`fs-5 fw-bold ${isMobile?"fs-6":""}`}>
                   {data.totCount?.firstSection?.totNo}

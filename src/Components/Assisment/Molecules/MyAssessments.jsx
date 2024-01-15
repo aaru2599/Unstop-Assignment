@@ -14,7 +14,7 @@ const MyAssessments = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="px-4">
       <Row className="d-flex flex-wrap">
         {[...Array(8)].map((_, index) => (
           <Col

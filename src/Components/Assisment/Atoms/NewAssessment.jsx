@@ -10,8 +10,8 @@ const AssText = styled.div`
 const NewAssessment = () => {
   return (
     <div
-      className="bg-body-secondary  rounded-3"
-      style={{ height: "200px", border: "1px dashed #DADCE0" }}
+      className="  rounded-3"
+      style={{ height: "200px", border: "1px dashed #DADCE0",backgroundColor:"#F6F8FA" }}
     >
       <div
         className="p-4 gap-2 d-flex flex-column align-items-center justify-content-center"
@@ -26,7 +26,7 @@ const NewAssessment = () => {
             <PlusIcon />
           </div>
         </div>
-        <div className="fs-5 fw-medium">New Assessment</div>
+        <div className="fw-medium" style={{fontSize:"18px"}}>New Assessment</div>
         <AssText>
           From here, you can add questions of multiple types like MCQs,
           Subjective (text or paragraph)!

@@ -31,10 +31,13 @@ const Navigation = () => {
     text-align: center;
     padding: 20px;
     padding-top: 0;
+    position:sticky;
+    top:0px;
     display: flex;
     gap:20px;
     flex-direction: column;
     font-size: 13px;
+    height:100%;
     background-color: white;
   `;
 
@@ -46,7 +49,8 @@ const Navigation = () => {
     margin:0px 10px;
     width:50px;
     color:#D63500;
-    background-color:"#FBEBEA";
+    background-color:#FBEBEA;
+    
   `;
 
   return (
@@ -82,12 +86,13 @@ const Navigation = () => {
                 <div className="px-2"style={{color:"#1c4980"}}>Round Status</div>
               </div>
               <AdminOuter >
-                <div className="text-center">Admin</div>
+               Admin
+
               </AdminOuter>
             </div> :
             <div className="d-flex fw-medium flex-column align-items-center gap-3">
               <AdminOuter>
-                <div className="text-center">Admin</div>
+                Admin
               </AdminOuter>
               <div>
                 <AdminIcon />
